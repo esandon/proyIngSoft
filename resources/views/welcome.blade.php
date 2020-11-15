@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Proyeco IngSoft
                 </div>
 
                 <div class="links">

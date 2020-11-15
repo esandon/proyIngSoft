@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Proyeco IngSoft
+                    Proyeco IngSofts
                 </div>
 
                 <div class="links">

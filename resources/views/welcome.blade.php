@@ -82,6 +82,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     Proyeco IngSoft
+                    prueba
                 </div>
 
                 <div class="links">

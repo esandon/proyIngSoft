@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Proyeco IngSofts
+                    Prueba 5
                 </div>
 
                 <div class="links">

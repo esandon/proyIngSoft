@@ -2,9 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
+    "\\app\\Imports",
     "\\database",
-    "\\database\\migrations"
+    "\\database\\migrations",
+    "\\routes"
   ],
-  "SelectedNode": "\\.env.example",
+  "SelectedNode": "\\app\\Imports\\ImportarEstudiante.php",
   "PreviewInSolutionExplorer": false
 }

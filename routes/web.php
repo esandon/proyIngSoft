@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/get-all-estudiante','EstudianteController@getAllEstudiante');
+
+
+Route::get('import-excel', 'ImportExcel\ImportExcelController@index');
+
+Route::post('import-excel', 'ImportExcel\ImportExcelController@import');

@@ -1,0 +1,44 @@
+primero que nada instalen el xampp
+//clonar repositorio(crean una carpeta en xampp y abren el git bash en esa carpeta)
+git clone https://github.com/esandon/proyIngSoft.git
+//acceso a proyecto
+git config --global user.email "tu correo"
+git config --global user.name "tu nombre"
+//obtener cambios
+git pull origin develop
+//agregar cambios
+git add .
+//comentar cambios
+git commit -m"tu comentario"
+//subir cambios
+git push
+//Crea tabla en la base de datos cuando la clase esta echa al igual que su tabla en migrations
+php artisan make:model User
+//Crea tabla en la base de datos y ademas crea el archivo en migrations al agregar -m
+php artisan make:model Publicacion -m
+//crea todas las tablas que estan en el proyecto
+php artisan migrate
+//
+composer require laravel/ui ^1.2
+
+php artisan ui bootstrap --auth
+
+npm install
+
+npm install laravel-mix@1.4.2
+
+npm run dev
+npm audit fix
+//Pasar el contenido del Branch al Master en Git
+//Para pasar el contenido de una rama a ser el master, usamos el siguiente codigo.
+//no es seguro
+git checkout rama
+git merge -s ours master
+git checkout master
+git merge rama
+//create controller
+php artisan make:controller NombreController --resource
+//errores y cambios no echos
+"content-hash": "cebad54775a6c6a3ba6c04f92f695667", 
+//resetear un git pull
+ git reset --hard

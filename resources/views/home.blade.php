@@ -79,6 +79,7 @@ body {
   <a href="#contact"><span class="fa fa-star"></span> Publicacion</a>
   <a href="#contact"><span class="fa fa-user-circle-o"></span> Usuarios</a>
 </div>
+@yield('contents')
 <!--
 <div class="container">
     <div class="row justify-content-center">

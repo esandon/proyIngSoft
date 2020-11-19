@@ -26,20 +26,6 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
                             <label for="rol" class="col-md-4 col-form-label text-md-right">{{ __('Rol') }}</label>
 
                             <div class="col-md-6">
@@ -48,7 +34,7 @@
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">Rol</label>
                                 </div>
-                                <select class="custom-select @error('rol') is-invalid @enderror" id="rol" name="rol" value="{{ old('rol') }}" required autocomplete="rol" autofocus>
+                                <select class="custom-select @error('rol') is-invalid @enderror" id="rol" name="rol"  required autofocus>
                                     <option selected>Seleccionar Rol</option>
                                     <option value="1">SECRETARIA</option>
                                     <option value="2">JEFE DE CARRER</option>
@@ -64,6 +50,22 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>

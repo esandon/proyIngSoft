@@ -24,7 +24,7 @@ class ImportExcelController extends Controller
             'import_file' => 'required'
         ]);
         Excel::import(new ImportarEstudiantes, request()->file('import_file'));
-        return back()->with('success', 'Contacts imported successfully.');
+        return back()->with('Hecho', 'Estudiantes importados con exito.');
     }
 
 }

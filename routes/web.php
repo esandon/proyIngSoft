@@ -21,3 +21,8 @@ Route::get('/get-all-estudiante','EstudianteController@getAllEstudiante');
 Route::get('import-excel', 'ImportExcel\ImportExcelController@index');
 
 Route::post('import-excel', 'ImportExcel\ImportExcelController@import');
+
+
+Route::get('import-excelA', 'ImportExcel\ImportExcelControllerA@index');
+
+Route::post('import-excelA', 'ImportExcel\ImportExcelControllerA@import');

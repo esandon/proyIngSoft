@@ -18,9 +18,9 @@ body {
 
 /* Style the sidenav links and the dropdown button */
 .sidenav a, .dropdown-btn {
-  padding: 6px 8px 6px 16px;
+  padding: 6px 8px 30px 16px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 15px;
   color: #ffffff;
   display: block;
   border: none;
@@ -73,11 +73,11 @@ body {
 @section('content')
 
 <div class="sidenav">
-  <a href="#about">Bienvenida</a>
-  <a href="#services">Agregar Estudiantes</a>
-  <a href="#clients">Agregar Asignaturas</a>
-  <a href="#contact">Publicacion</a>
-  <a href="#contact">Usuarios</a>
+  <a href="#about"><span class="fa fa-star"></span> Bienvenida</a>
+  <a href="#services"><span class="fa fa-star"></span> Agregar Estudiantes</a>
+  <a href="#clients"><span class="fa fa-star"></span> Agregar Asignaturas</a>
+  <a href="#contact"><span class="fa fa-star"></span> Publicacion</a>
+  <a href="#contact"><span class="fa fa-user-circle-o"></span> Usuarios</a>
 </div>
 <!--
 <div class="container">

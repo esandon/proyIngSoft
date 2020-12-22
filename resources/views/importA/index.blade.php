@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Importar Archivo </title>
+<title>Importar Archivo </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Importar estudiantes</title>
+    <title>Importar asignaturas</title>
+    <a href ="{{route('home')}}"class="btn btn-primary float-left">Volver</a>
+     </div>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 
@@ -13,7 +15,7 @@
     <div class="container">
         <div class="card mt-4">
             <div class="card-header">
-                Laravel 6 Import Excel to database 
+                Laravel 6 Importar excel 
             </div>
                 @if ($errors->any())
             <div class="alert alert-danger">
@@ -32,7 +34,7 @@
     </div>
     @endif
             <div class="card-body">
-                <form action="{{ url('import-excel') }}" method="POST" name="importform" enctype="multipart/form-data">
+                <form action="{{ url('importA') }}" method="POST" name="importform" enctype="multipart/form-data">
                     @csrf
                     <input type="file" name="import_file" class="form-control">
                     <br>
@@ -42,22 +44,25 @@
         </div>
         <div class="panel panel-default">
         <div class="panel-heading">
-        <h3 class="panel-title">Datos estudiantes</h3>
+        <h3 class="panel-title">Datos asignaturas</h3>
         </div>
         <div class="panel-body">
         <div class="table-responsive">
         <table class="table table-bordered table-striped">
-        
-        @foreach($estudiantes as $c)
-        <tr>
-            <td>{{ $c->rut }}</td>
-            <td>{{ $c->apellido_paterno }}</td>
-            <td>{{ $c->apellido_materno }}</td>
-            <td>{{ $c->nombre }}</td>
-            <td>{{ $c->codigo_carrera }}</td>
-            <td>{{ $c->correo_electronico }}</td>
-        </tr>
+            </th>
+                <th>Código</th>
+                <th>NRC</th>
+                <th>Asignatura </th>
+            </th>    
+            @foreach($asignaturas as $c)
+            <<tr role="row" class="odd">>
+                <td>{{ $c->codigo }}</td>
+                <td>{{ $c->NRC }}</td>
+                <td>{{ $c->asignatura }}</td>
+            
+            </tr>
         @endforeach
+
         </table>
         </div>
         </div>

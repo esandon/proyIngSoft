@@ -21,28 +21,22 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/get-all-estudiante','EstudianteController@getAllEstudiante');
 
 
-Route::get('import-excel', 'ImportExcel\ImportExcelController@index');
+Route::get('importE', 'ImportExcel\ImportExcelEstudianteController@index');
 
-Route::post('import-excel', 'ImportExcel\ImportExcelController@import');
+Route::post('importE', 'ImportExcel\ImportExcelEstudianteController@import');
+
+Route::get('importA', 'ImportExcel\ImportExcelAsignaturaController@index');
+
+Route::post('importA', 'ImportExcel\ImportExcelAsignaturaController@import');
 
 
-Route::get('import-excelA', 'ImportExcel\ImportExcelControllerA@index');
+Route::post('importInsert','ImportExcel\ImportExcelController@importInsert')->name('importInsert');
 
-Route::post('import-excelA', 'ImportExcel\ImportExcelControllerA@import');
+Route::post('importUpdate','ImportExcel\ImportExcelController@importUpdate')->name('importUpdate');
+
+Route::resource('estudiante', 'EstudianteController');
+
+Route::resource('import_excel', 'ImportExcel\ImportExcelController');

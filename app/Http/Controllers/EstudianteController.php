@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use App\Http\Requests\EstudianteUpdateRequest;
 use App\Estudiante;
+use Freshwork\ChileanBundle\Rut;
+use Illuminate\Validation\Rule;
+
 
 
 class EstudianteController extends Controller
@@ -12,9 +17,30 @@ class EstudianteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        
+        $Estudiante = Estudiante::orderBy('apellido_paterno','DESC')->get();
+       
+
+        if ($request) {
+            /*
+            $query = trim($request->get( key: 'search'));
+            */
+            
+            $nombre = $request->get('buscarpor');
+            $rut = $request->get('buscarporRut');
+            /*
+             $Estudiante = Estudiante::where('rut','LIKE','%'. $request->rut. '%')
+             */
+            $Estudiante = Estudiante::nombre($nombre)->rut($rut)->paginate(5);
+            /*
+            return view('estudiante.search',['estudiantes' => $Estudiante,'search' => $query]);
+            */
+            return view('estudiante.index',compact('Estudiante'));
+           
+        }
+        return view('estudiante.index',compact('Estudiante'));
     }
 
     /**
@@ -35,7 +61,7 @@ class EstudianteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -46,7 +72,7 @@ class EstudianteController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -57,7 +83,19 @@ class EstudianteController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $Estudiante = Estudiante::findOrFail($id);
+        /*
+        $rutconGuion = $Estudiante->rut;
+        $rutSinGuon=
+        $number = strVal(Rut::parse($rutconGuion)->number());
+        $vn = strVal(Rut::parse($rutconGuion)->vn());
+        $rutSinGuion=$number.$vn;
+
+        $rutFormateado = Rut::set()->number($number)->vn($vn)->format();
+        */
+        return view('estudiante.edit',compact('Estudiante'));
+
     }
 
     /**
@@ -67,9 +105,18 @@ class EstudianteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EstudianteUpdateRequest $request, $id)
     {
-        //
+        $Estudiante = Estudiante:: findOrFail($id);
+
+        $request->rules([
+            'correo_electronico' => 'unique:estudiantes,correo_electronico,'.$Estudiante->id,
+        ]);
+
+
+        $Estudiante->correo_electronico = $request->correo_electronico;
+        $Estudiante->save();
+        return redirect()->route('estudiante.index')->with('Datos','Registro actualizado');
     }
 
     /**
@@ -81,5 +128,30 @@ class EstudianteController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+        if ($request) {
+            /*
+            $query = trim($request->get( key: 'search'));
+            */
+            $nombre = $request->get('buscarpor');
+            $rut = $request->get('buscarporRut');
+            /*
+             $Estudiante = Estudiante::where('rut','LIKE','%'. $request->rut. '%')
+             */
+            $Estudiante = Estudiante::nombre($nombre)->rut($rut)->paginate(5);
+            /*
+            return view('estudiante.search',['estudiantes' => $Estudiante,'search' => $query]);
+            */
+            return view('estudiante.index',compact('Estudiante'));
+           
+        }
+    }  
+    public function confirm($id)
+    {
+        $Estudiante = Estudiante::finOrFail($id);
+        return view('estudiante.confirm',compact('Estudiante'));
     }
 }

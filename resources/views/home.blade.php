@@ -74,10 +74,16 @@ body {
 
 <div class="sidenav">
   <a href="#about"><span class="fa fa-tachometer"></span> Bienvenida</a>
-  <a href="#services"><span class="fa fa-address-book"></span> Agregar Estudiantes</a>
-  <a href="#clients"><span class="fa fa-id-card-o"></span> Agregar Asignaturas</a>
+  <a href="{{url('importE')}}"><span class="fa fa-address-book"></span> Agregar Estudiantes</a>
+  <a href="{{url('importA')}}"><span class="fa fa-id-card-o"></span> Agregar Asignaturas</a>
   <a href="#contact"><span class="fa fa-address-card-o "></span> Publicacion</a>
   <a href="#contact"><span class="fa fa-user-circle-o"></span> Usuarios</a>
+
+  <a href ="{{route('estudiante.index')}}" class="btn btn-primary btn-medium btn-block">Cambiar Correo electronico</a>
+  <a href ="{{url('importE')}}" class="btn btn-primary btn-medium btn-block"> Cargar Estudiantes</a>
+  <a href ="{{url('importA')}}" class="btn btn-primary btn-medium btn-block"> Cargar Asignaturas</a>
+
+  
 </div>
 @yield('contents  ')
 <!--

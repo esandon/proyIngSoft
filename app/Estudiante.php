@@ -17,4 +17,16 @@ class Estudiante extends Model
         return $this->hasMany(Atencion::class);
     }
 
+    public function scopeNombre($query, $nombre) {
+    	if ($nombre) {
+    		return $query->where('nombre','like',"%$nombre%");
+    	}
+    }
+
+    public function scopeRut($query, $rut) {
+    	if ($rut) {
+    		return $query->where('rut','like',"%$rut%");
+    	}
+    }
+
 }

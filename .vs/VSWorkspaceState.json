@@ -4,11 +4,13 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\app\\Imports",
-    "\\database",
-    "\\database\\migrations",
+    "\\app\\Http\\Controllers\\ImportExcel",
+    "\\resources",
+    "\\resources\\views",
+    "\\resources\\views\\importA",
+    "\\resources\\views\\importE",
     "\\routes"
   ],
-  "SelectedNode": "\\app\\Imports\\ImportarEstudiante.php",
+  "SelectedNode": "\\app\\Http\\Controllers\\ImportExcel\\ImportExcelAsignaturaController.php",
   "PreviewInSolutionExplorer": false
 }

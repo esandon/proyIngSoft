@@ -9,7 +9,7 @@ body {
   width: 200px;
   position: fixed;
   z-index: 1;
-  top: 56px;
+  top: 175px;
   left: 0;
   background-color: #23415B;
   overflow-x: hidden;
@@ -64,26 +64,35 @@ body {
 
 /* Some media queries for responsiveness */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {padding-top: 10px;}
+  .sidenav a {font-size: 10px;}
 }
 </style>
-@extends('layouts.app')
+@extends('layouts.layout')
 
 @section('content')
+<div class= "col-md-2">
+  <div class="fixed-section affix" data-spy="affix" data-offset-top="400">
+    <div class="sidenav" >
 
-<div class="sidenav">
-  <a href="#about"><span class="fa fa-tachometer"></span> Bienvenida</a>
-  <a href="{{url('importE')}}"><span class="fa fa-address-book"></span> Agregar Estudiantes</a>
-  <a href="{{url('importA')}}"><span class="fa fa-id-card-o"></span> Agregar Asignaturas</a>
-  <a href="#contact"><span class="fa fa-address-card-o "></span> Publicacion</a>
-  <a href="#contact"><span class="fa fa-user-circle-o"></span> Usuarios</a>
-
-  <a href ="{{route('estudiante.index')}}" class="btn btn-primary btn-medium btn-block">Cambiar Correo electronico</a>
-  <a href ="{{url('importE')}}" class="btn btn-primary btn-medium btn-block"> Cargar Estudiantes</a>
-  <a href ="{{url('importA')}}" class="btn btn-primary btn-medium btn-block"> Cargar Asignaturas</a>
-
-  
+      @if (session('status'))
+          <div class="alert alert-success" role="alert">
+              {{ session('status') }}
+          </div>
+      @endif
+      <a href="{{url('home')}}"><span class="fa fa-tachometer"></span> Inicio</a>
+      <a href="{{route('usuario.index')}}"><span class="fa fa-user-circle-o"></span> Usuarios</a>
+      <a href ="{{url('importE')}}" class="btn btn-primary btn-medium btn-block"> Cargar Estudiantes</a>
+      <a href ="{{url('importA')}}" class="btn btn-primary btn-medium btn-block"> Cargar Asignaturas</a>
+      <a href ="{{route('estudiante.index')}}" class="btn btn-primary btn-medium btn-block">Cambiar Correo electronico</a>
+    
+      <a href ="#" class="btn btn-primary btn-medium btn-block"> Registrar atención</a>
+      <a href ="#" class="btn btn-primary btn-medium btn-block"> Fichas Estudiantes</a>
+      <a href ="#" class="btn btn-primary btn-medium btn-block"> Consulta Profesor</a>
+      <a href ="#" class="btn btn-primary btn-medium btn-block"> Consulta Asignatura</a>
+      <a href ="#" class="btn btn-primary btn-medium btn-block"> Reportar situación</a>
+    </div>
+  </div> 
 </div>
 @yield('contents  ')
 <!--

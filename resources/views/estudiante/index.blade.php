@@ -15,7 +15,7 @@
 
                         <input name="buscarpor" class="form-control mr-sm-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
 
-                        <input name="buscarporRut" class="form-control mr-sm-2" type="search" oninput="checkRut(this)" placeholder="Buscar por rut" aria-label="Search">
+                        <input name="buscarporRut" class="form-control mr-sm-2" type="search" placeholder="Buscar por rut" aria-label="Search">
                        <!-- <input class="form-control" type="text" id="rut" name="rut" required  placeholder="Ingrese RUT">-->
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
 

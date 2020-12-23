@@ -12,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
-        <title>Sistema Registro de Atención </title>
+        <title>Sistema Registro de Atención DISC</title>
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
@@ -20,9 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
-
-Route::get('/get-all-estudiante','EstudianteController@getAllEstudiante');
-
 
 Route::get('importE', 'ImportExcel\ImportExcelEstudianteController@index');
 
@@ -33,10 +30,34 @@ Route::get('importA', 'ImportExcel\ImportExcelAsignaturaController@index');
 Route::post('importA', 'ImportExcel\ImportExcelAsignaturaController@import');
 
 
+
+// ------------------------ delete ------------------------- //
+Route::get('importE/{importID}','ImportExcel\ImportExcelEstudianteController@importDelete')->name('importDelete');
+// ------------------------ insert ------------------------ //
+Route::post('importInsert','ImportExcel\ImportExcelEstudianteController@importInsert')->name('importInsert');
+// ------------------------ update ------------------------ //
+
+Route::post('importUpdate','ImportExcel\ImportExcelEstudianteController@importUpdate')->name('importUpdate');
+
+Route::get('importE','ImportExcel\ImportExcelEstudianteController@index');
+Route::post('importE/update','ImportExcel\ImportExcelEstudianteController@update');
+
+
+
+
+
+
+
+
+
 Route::post('importInsert','ImportExcel\ImportExcelController@importInsert')->name('importInsert');
 
 Route::post('importUpdate','ImportExcel\ImportExcelController@importUpdate')->name('importUpdate');
 
 Route::resource('estudiante', 'EstudianteController');
 
+Route::resource('usuario','UserController');
+
 Route::resource('import_excel', 'ImportExcel\ImportExcelController');
+
+Route::get('/usuarios','UserController@index');

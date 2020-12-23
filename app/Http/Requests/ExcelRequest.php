@@ -24,7 +24,22 @@ class ExcelRequest extends FormRequest
     public function rules()
     {
         return [
-            
+           
+            'rut'                   =>'required|min:8|max:9|unique:estudiantes,rut',
+            'apellido_paterno'      =>'required|string|min:3|max:15',
+            'apellido_materno'      =>'required|string|min:3|max:15',
+            'nombre'                =>'required|string|min:6|max:15',
+            'codigo_carrera'        =>'required|numeric|min:3|max:6',
+            'correo_electronico'    => 'email|min:11|max:50|unique:estudiantes,email'
+        ];
+
+
+    }
+
+    public function messages(){
+        return [
+
+           
         ];
     }
 }

@@ -3,14 +3,11 @@
     "",
     "\\app",
     "\\app\\Http",
-    "\\app\\Http\\Controllers",
-    "\\app\\Http\\Controllers\\ImportExcel",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\importA",
     "\\resources\\views\\importE",
     "\\routes"
   ],
-  "SelectedNode": "\\app\\Http\\Controllers\\ImportExcel\\ImportExcelAsignaturaController.php",
   "PreviewInSolutionExplorer": false
 }

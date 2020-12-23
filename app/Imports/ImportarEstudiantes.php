@@ -17,7 +17,9 @@ use Maatwebsite\Excel\Concerns\OnEachRow;
 class ImportarEstudiantes implements OnEachRow
 {
 
-    
+    public $timestamps = false;
+    protected $table = 'estudiantes';
+   
     public function onRow(Row $row)
     {
         $row =$row->toArray();

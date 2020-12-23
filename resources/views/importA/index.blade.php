@@ -1,3 +1,6 @@
+@extends('layouts.layout')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +39,11 @@
             <div class="card-body">
                 <form action="{{ url('importA') }}" method="POST" name="importform" enctype="multipart/form-data">
                     @csrf
+                    <div class="card-header">
+                        Antes de cargar el archivo de Asignaturas, porfavor revise que los datos tengan el formato correcto.
+                        Todos los campos son obligatorios.
+                            
+                    </div>
                     <input type="file" name="import_file" class="form-control">
                     <br>
                     <button class="btn btn-success">Importar archivo</button>
@@ -72,3 +80,4 @@
     
 </body>
 </html>
+@endsection

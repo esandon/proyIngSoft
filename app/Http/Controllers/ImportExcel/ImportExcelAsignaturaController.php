@@ -21,10 +21,16 @@ class ImportExcelAsignaturaController extends Controller
     public function import(Request $request)
     {
         $request->validate([
-            'import_file' => 'required|mimes:xls,xlsx'
+            'import_file' => 'required|mimes:xls,xlsx',
+            'codigo'        =>'required|string|min:8|max:10',
+            'NRC'           =>'required|numeric|min:4|max:15',
+            'asignatura'    =>'required|string|min:5|max:50',
         ],
         [
             'import_file.requerided' => _('.'),
+            'codigo.required'       =>'El codigo es obligatorio. Debe ser alfanumérico DAIS-00404',
+            'NRC.required'          =>'El NRC es obligatorio. Debe ser un valor númerico.',
+            'asignatura.required'   =>'La asignatura es obligatoria',
 
         ]);
         
@@ -42,8 +48,7 @@ class ImportExcelAsignaturaController extends Controller
              foreach ($failures as $failure) {
                  $failure->row(); // row that went wrong
                  $failure->attribute(); // either heading key (if using heading row concern) or column index
-                 $failure->errors(); // Actual error messages from Laravel validator
-                 $failure->values(); // The values of the row that has failed.
+                
              }
         }
     }

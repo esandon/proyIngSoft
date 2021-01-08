@@ -60,4 +60,11 @@ Route::resource('usuario','UserController');
 
 Route::resource('import_excel', 'ImportExcel\ImportExcelController');
 
+
+Route::post('atencion', 'AtencionController@store')->name('registrar_atencion');
+
 Route::get('/usuarios','UserController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

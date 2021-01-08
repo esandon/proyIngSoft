@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Atencion;
 
 class AtencionController extends Controller
 {
@@ -13,7 +14,7 @@ class AtencionController extends Controller
      */
     public function index()
     {
-        //
+        return view("atencion.indexAT");
     }
 
     /**
@@ -34,7 +35,7 @@ class AtencionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Atencion::create($request->all());
     }
 
     /**

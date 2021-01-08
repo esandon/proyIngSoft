@@ -86,7 +86,7 @@ body {
       <a href ="{{url('importA')}}" class="btn btn-primary btn-medium btn-block"> Cargar Asignaturas</a>
       <a href ="{{route('estudiante.index')}}" class="btn btn-primary btn-medium btn-block">Cambiar Correo electronico</a>
     
-      <a href ="#" class="btn btn-primary btn-medium btn-block"> Registrar atención</a>
+      <a href ="{{url('atencionA')}}" class="btn btn-primary btn-medium btn-block"> Registrar atención</a>
       <a href ="#" class="btn btn-primary btn-medium btn-block"> Fichas Estudiantes</a>
       <a href ="#" class="btn btn-primary btn-medium btn-block"> Consulta Profesor</a>
       <a href ="#" class="btn btn-primary btn-medium btn-block"> Consulta Asignatura</a>

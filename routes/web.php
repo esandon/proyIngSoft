@@ -47,9 +47,6 @@ Route::post('importE/update','ImportExcel\ImportExcelEstudianteController@update
 
 
 
-
-
-
 Route::post('importInsert','ImportExcel\ImportExcelController@importInsert')->name('importInsert');
 
 Route::post('importUpdate','ImportExcel\ImportExcelController@importUpdate')->name('importUpdate');
@@ -60,8 +57,8 @@ Route::resource('usuario','UserController');
 
 Route::resource('import_excel', 'ImportExcel\ImportExcelController');
 
-
-Route::post('atencion', 'AtencionController@store')->name('registrar_atencion');
+Route::get('atencion', 'AtencionController@index')->name('registroAtencion');
+Route::post('atencion', 'AtencionController@store')->name('registrarAtencion');
 
 Route::get('/usuarios','UserController@index');
 

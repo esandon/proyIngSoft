@@ -91,7 +91,8 @@
                     </div>
                     <div class="panel-body">
                         <div class="card-body">
-                            <form action="{{ route('registrar_atencion')}}" method="POST">
+                            <form action="{{ route('registrarAtencion') }}" method="POST">
+                            @csrf
                                 <div class="form-row">
                                     <div class="col">
                                         <input type="date" name="fecha_publicacion" class="form-control">

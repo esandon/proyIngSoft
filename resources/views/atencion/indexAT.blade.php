@@ -95,19 +95,19 @@
                             @csrf
                                 <div class="form-row">
                                     <div class="col">
-                                        <input type="date" name="fecha_publicacion" class="form-control">
+                                        <input type="date" name="fecha_publicacion" class="form-control" required>
                                         <br>
                                         <br>
                                         Rut:
                                         <br>
                                         <br>
-                                        <input type="number" name="rut_estudiante" class="form-control" placeholder="RUT sin puntos ni guion">
+                                        <input type="number" name="rut_estudiante" class="form-control" placeholder="RUT sin puntos ni guion" required>
                                         <br>
                                         <br>
                                         Descipcion:
                                         <br>
                                         <br>
-                                        <input type="text" name="descripcion" class="form-control" placeholder="Ingrese una descipcion">
+                                        <input type="text" name="descripcion" class="form-control" placeholder="Ingrese una descipcion" required>
                                         <br>
                                         <br>
                                         Medio de atencion:

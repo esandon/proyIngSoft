@@ -36,6 +36,8 @@ class AtencionController extends Controller
     public function store(Request $request)
     {
         Atencion::create($request->all());
+        if ($request)
+            return view('atencion.registroHecho');
     }
 
     /**
